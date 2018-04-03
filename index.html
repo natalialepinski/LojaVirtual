@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" ng-app="lojaApp">
+<html lang="pt-br" ng-app="LojaVirtual">
 <head>
 	<meta charset=utf-8>
 	<meta name=description content="Loja Virtual">
@@ -14,6 +14,9 @@
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 
+	<!-- JQUERY -->
+	<script src="lib/jquery/jquery.js"></script>
+
 	<!-- BOOTSTRAP -->
 	<link rel="stylesheet" href="lib/bootstrap/bootstrap.min.css">
 	<script src="lib/bootstrap/bootstrap.min.js"></script>
@@ -23,12 +26,10 @@
     <script src="lib/angular/angular-locale_pt-br.js"></script>
     <script src="lib/angular/angular-route.min.js"></script>
 
-    <!-- JQUERY -->
-	<script src="lib/jquery/jquery.js"></script>
-
 	<!-- SCRIPTS -->
-	<script src="js/directives/my-directives.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/controllers/storeController.js"></script>
+	<script src="js/directives/my-directives.js"></script>
 
 </head>
 <body>
@@ -41,16 +42,13 @@
 			<div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav lista-menu">
 			        <li>
-			        	<a href="index.html">Home</a>
+			        	<a href="partials/home.html">Home</a>
 			        </li>
 			     	<li>
-			     		<a href="#">Produtos</a>
+			     		<a href="partials/produtos.html">Produtos</a>
 			     	</li>
 			     	<li>
-			     		<a href="#">Carrinho</a>
-			     	</li>
-			     	<li>
-			     		<a href="#"></a>
+			     		<a href="partials/carrinho.html">Carrinho</a>
 			     	</li>
 		    	</ul>
 		    </div>
