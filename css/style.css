@@ -1,17 +1,23 @@
-.titulo-menu {
+.title-menu {
 	color: #fff !important;
 	font-weight: bold;
 }
 
-.menu-principal {
-	background-color: #2c2255;
+.main-menu {
+	background-color: #184357;
 }
 
-.lista-menu a {
+.list-menu a {
 	color: #ababab !important;
 }
 
-.lista-menu a:hover, .lista-menu a:focus {
+.list-menu a:hover, .list-menu a:focus {
 	color: #fff !important;
 	background-color: transparent !important;
+}
+
+.submit-button {
+	background-color: #eda73d !important;
+	border-color: #eda73d !important;
+	color: #fff;
 }
