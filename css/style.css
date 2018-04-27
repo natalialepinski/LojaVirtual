@@ -1,23 +1,42 @@
+body {
+	background-color: #ebebeb;
+	color: #515151;
+}
+
+.navbar {
+	box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15), 0 6px 10px 0 rgba(0, 0, 0, 0.05);
+}
+
 .title-menu {
-	color: #fff !important;
+	color: #d32f2f !important;
 	font-weight: bold;
 }
 
 .main-menu {
-	background-color: #184357;
+	background-color: #fff;
+}
+
+.u-list {
+	float: right;
+}
+
+.list-menu {
+	margin-right: 5px;
 }
 
 .list-menu a {
-	color: #ababab !important;
+	color: #121212 !important;
 }
 
 .list-menu a:hover, .list-menu a:focus {
-	color: #fff !important;
-	background-color: transparent !important;
+	color: #121212 !important;
+	font-weight: bold;
+	border-bottom: 2px solid #d32f2f;
 }
 
 .submit-button {
-	background-color: #eda73d !important;
-	border-color: #eda73d !important;
+	background-color: #d32f2f !important;
+	border-color: #d32f2f !important;
 	color: #fff;
 }
+

@@ -1,33 +1,28 @@
-angular.module('LojaVirtual', [''])
+angular.module('storeApp', [''])
 	.config(['$routeProvider', function(){
 		$routeProvider.
 			when('/home', {
 				templateUrl: 'partials/home.html',
-				controller: 'storeController'
+				controller: 'storeController',
+				controllerAs: ''
 			}).
-			when('/produtos', {
-				templateUrl: 'partials/produtos.html',
-				controller: 'storeController'
+			when('/products', {
+				templateUrl: 'partials/products.html',
+				controller: 'productsController'
+				controllerAs: ''
 			}).
-			when('/carrinho', {
-				templateUrl: 'partials/carrinho.html',
-				controller: 'storeController'
+			when('/product', {
+				templateUrl: 'partials/product.html',
+				controller: 'productController',
+				controllerAs: ''
+			}).
+			when('/cart', {
+				templateUrl: 'partials/cart.html',
+				controller: 'cartController'
+				controllerAs: ''
 			}).
 			otherwise({
 				redirectTo: '/home'
 			});
-	}])
-	.factory("DataService", function(){
-		
-		// create a store
-		var myHome = new home();
-
-		// create a shopping cart
-		var myCart = new carrinho("LojaVirtual");
-
-		return {
-			home: myHome,
-			carrinho: myCart,
-		};
-	});
+	}]);
 
