@@ -1,0 +1,17 @@
+    <div class="card" style="width: 18rem; margin-top: 20px;">
+    <img class="card-img-top" ng-src="{{product.photos[0]}}" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{product.name}}</h5>
+      <p class="card-text">{{product.description}}</p>
+      <p class="card-text" ng-if="product.quantity > 0">{{product.quantity}}</p>
+      <p class="card-text" ng-if="product.quantity == 0">Produto indisponivel</p>
+      <button type="button" class="btn btn-primary">Adicionar ao carrinho</button>
+    </div>
+  </div>
+
+
+  ng-click 
+  criar funcao controller produto
+  cadastrar o produto em outro service na main.js
+  criar a tela de carrinho, usa o novo service
+  fazer ng-repeat dos produtos no carrinho

@@ -5,7 +5,7 @@
 	<meta name=description content="Loja Virtual">
 	<meta name=viewport content="width=device-width, initial-scale=1">
 	<meta name="author" content="Natalia Lepinski">
-
+	<base href="/">
 	<title>Hi Store</title>
 
 	<!-- FAVICON -->
@@ -34,10 +34,10 @@
 	<script src="js/controllers/storeController.js"></script>
 	<script src="js/directives/my-directives.js"></script>
 </head>
-<body ng-controller="storeController">
+<body>
 	<!-- MENU -->
 	<nav class="navbar navbar-expand-lg main-menu">
-  		<a class="navbar-brand title-menu" href="partials/home.html">Hi Store</a>
+  		<a class="navbar-brand title-menu" href="/home">Hi Store</a>
   			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     			<span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
   			</button>
@@ -45,13 +45,13 @@
   		<div class="collapse navbar-collapse" id="navbarSupportedContent">
    			 <ul class="navbar-nav mr-auto u-list">
       			<li class="nav-item list-menu">
-        			<a class="nav-link" href="partials/home.html">Home</a>
+        			<a class="nav-link" href="/home">Home</a>
       			</li>
       			<li class="nav-item list-menu">
-        			<a class="nav-link" href="partials/products.html">Produtos</a>
+        			<a class="nav-link" href="/products">Produtos</a>
       			</li>
       			<li class="nav-item list-menu">
-        			<a class="nav-link" href="partials/cart.html">Carrinho</a>
+        			<a class="nav-link" href="/cart">Carrinho</a>
       			</li>
     		</ul>
     		<form class="form-inline my-2 my-lg-0">
