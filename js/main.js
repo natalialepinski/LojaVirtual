@@ -62,6 +62,9 @@ angular.module('storeApp', ['ngRoute'])
 			return product.id === parseInt($routeParams.id);
 		}); 
 	}])
+	.controller('cartController', ['$scope', function($scope) {
+		
+	}])
 	.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider){
 		$routeProvider.
 			when('/home', {
