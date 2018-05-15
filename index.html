@@ -12,7 +12,7 @@
 	<link rel="icon" type="image/png" href="img/favicon.png" />
 
 	<!-- FONTAWESOME -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="css/style.css">
@@ -26,52 +26,61 @@
 
 	<!-- ANGULAR -->
     <script src="lib/angular/angular.js"></script>
-    <script src="lib/angular/angular-locale_pt-br.js"></script>
     <script src="lib/angular/angular-route.min.js"></script>
 
 	<!-- SCRIPTS -->
 	<script src="js/main.js"></script>
 	<script src="js/controllers/storeController.js"></script>
-	<script src="js/directives/my-directives.js"></script>
+	<script src="js/controllers/productController.js"></script>
+	<script src="js/controllers/productsController.js"></script>
+	<script src="js/controllers/cartController.js"></script>
+	<script src="js/controllers/searchController.js"></script>
+	<script src="js/controllers/searchFormController.js"></script>
+	<script src="js/services/product.service.js"></script>
+	<script src="js/services/cart.service.js"></script>
 </head>
 <body>
-	<!-- Menu -->
+	<!-- MENU -->
 	<nav class="navbar navbar-expand-lg main-menu">
-  		<a class="navbar-brand title-menu" href="/home">Hi Store</a>
-  			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    			<span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
-  			</button>
+		<a class="navbar-brand title-menu" href="/home">Hi Store</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+		</button>
 
-  		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-   			 <ul class="navbar-nav mr-auto u-list">
-      			<li class="nav-item list-menu">
-        			<a class="nav-link" href="/home">Home</a>
-      			</li>
-      			<li class="nav-item list-menu">
-        			<a class="nav-link" href="/products">Produtos</a>
-      			</li>
-      			<li class="nav-item list-menu">
-        			<a class="nav-link" href="/cart">Carrinho</a>
-      			</li>
-    		</ul>
-    		<form class="form-inline my-2 my-lg-0">
-      			<input class="form-control mr-sm-2" type="search" placeholder="O que procura?" aria-label="Buscar">
-      			<button class="btn btn-primary my-2 my-sm-0 submit-button" type="submit">Buscar</button>
-    		</form>
-  		</div>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto u-list">
+				<li class="nav-item list-menu">
+					<a class="nav-link" href="/home">Home</a>
+				</li>
+				<li class="nav-item dropdown list-menu">
+					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Produtos</a>
+					<div class="dropdown-menu">
+						<a class="dropdown-item" href="/search?query=mochila">Mochilas</a>
+						<a class="dropdown-item" href="/search?query=carteira">Carteiras</a>
+						<a class="dropdown-item" href="/products">Todos os produtos</a>
+					</div>
+				</li>
+				<li class="nav-item list-menu">
+					<a class="nav-link" href="/cart">Carrinho<i class="fas fa-shopping-cart"></i></a>
+				</li>
+			</ul>
+			<div ng-controller="searchFormController as sfController">
+				<form class="form-inline my-2 my-lg-0" ng-submit="sfController.submit()">
+					<input class="form-control mr-sm-2" type="search" placeholder="O que procura?" aria-label="Buscar" ng-model="sfController.query">
+					<button class="btn btn-primary my-2 my-sm-0 submit-button" type="submit">Buscar</button>
+				</form>
+			</div>
+		</div>
 	</nav>
 
-	<!-- Content -->
-	<div class="container">
-		<div ng-view></div>
-	</div>
+	<!-- CONTENT -->
+	<div class="container" ng-view></div>
 
-	
-	<!-- Footer -->
+	<!-- FOOTER -->
 	<footer class="page-footer">
-     	<div class="footer-copyright text-center pt-3 pb-3">
-        	<small>© 2018 Copyright: Hi Store</small>
-    	</div>
-	</footer>                      
+		<div class="footer-copyright text-center pt-3 pb-3">
+			<small>© 2018 Copyright: Hi Store</small>
+		</div>
+	</footer>       
 </body>
 </html>

@@ -1,11 +1,15 @@
 <div class="row" style="margin-top: 20px; margin-bottom: 20px;">
-  <img class="col-md-4 rounded float-left" style="width: 100%; height: 100%" ng-src="{{product.photos[0]}}" alt="Card image cap">
-  <div class="col-md-8" style="margin-top: 100px">
+	<div class="col-lg-4">
+  		<img class="img-product" ng-src="{{product.photos[0]}}" alt="imagem do produto">
+  	</div>
+  <div class="col-lg-8" style="margin-top: 100px">
     <h5 class="card-title">{{product.name}}</h5>
     <p class="card-text">{{product.fulldescription}}</p>
-    <p class="card-text" ng-if="product.quantity > 0">Produto em Estoque</p>
-    <p class="card-text" ng-if="product.quantity == 0">Produto indisponivel</p>
-    <button type="button" class="btn btn-success" ng-click="addItemToCart(product)">Adicionar ao carrinho</button>
+    <p class="card-text"><b>Valor: R$ {{product.price}},00</b></p>
+    <p class="card-text" ng-if="product.stock > 0">Produto em Estoque</p>
+    <p class="card-text" ng-if="product.stock == 0">Produto indisponivel</p>
+    <p>Selecione a quantidade: <input type="number" ng-model="product.quantity" placeholder="1"></p>
+    <p><button type="button" class="btn btn-success " ng-click="addItemToCart(product)" ng-disabled="product.stock == 0 || product.quantity > product.stock">Adicionar ao carrinho</button><p>
   </div>
 </div>
 

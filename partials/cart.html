@@ -1,79 +1,66 @@
-<div class="container-fluid">
-    <div class="row-fluid">
-        <div class="span8">
-
-            <!-- items -->
-            <table class="table table-bordered">
-
-                <!-- header -->
-                <tr class="well">
-                    <td><b>Item</b></td>
-                    <td class="tdCenter"><b>Quantidade</b></td>
-                    <td class="tdRight"><b>Preço</b></td>
-                    <td />
-                </tr>
-
-                <!-- empty cart message -->
-                <tr ng-hide="cart.getTotalCount() > 0" >
-                    <td class="tdCenter" colspan="4">
-                        Seu carrinho está vazio
-                    </td>
-                </tr>
-
-                <!-- cart items -->
-                <tr ng-repeat="product in cart.products | orderBy:'name'">
-                    <td>{{product.name}}</td>
-                    <td class="tdCenter">
-                      <div class="input-append">
-                        <!-- use type=tel instead of  to prevent spinners -->
-                        <input
-                            class="span3 text-center" type="tel" 
-                            ng-model="product.quantity" 
-                            ng-change="cart.saveItems()" />
-                        <button 
-                            class="btn btn-success" type="button" 
-                            ng-disabled="product.quantity >= 1000"
-                            ng-click="cart.addItem(product.sku, product.name, product.price, +1)">+</button>
-                        <button 
-                            class="btn btn-inverse" type="button" 
-                            ng-disabled="product.quantity <= 1"
-                            ng-click="cart.addItem(product.sku, product.name, product.price, -1)">-</button>
-                      </div>
-                    </td>
-                    <td class="tdRight">{{product.price * product.quantity | currency}}</td>
-                    <td class="tdCenter" title="remove from cart">
-                        <a href="" ng-click="cart.addItem(product.sku, product.name, product.price, -10000000)" >
-                            <i class="icon-remove" />
-                        </a>
-                    </td>
-                </tr>
-
-                <!-- footer -->
-                <tr class="well">
-                    <td><b>Total</b></td>
-                    <td class="tdCenter"><b>{{cart.getTotalCount()}}</b></td>
-                    <td class="tdRight"><b>{{cart.getTotalPrice() | currency}}</b></td>
-                    <td />
-                </tr>
-            </table>
-        </div>
-
-        <!-- buttons -->
-        <div class="span4">
-            <p class="text-info">
-                <button 
-                    class="btn btn-block" 
-                    onclick="window.location.href='home.html'">
-                    <i class="icon-chevron-left" /> back to store
-                </button>
-                <button 
-                    class="btn btn-block btn-danger" 
-                    ng-click="cart.clearItems()" 
-                    ng-disabled="cart.getTotalCount() < 1" >
-                    <i class="icon-trash icon-white" /> clear cart
-                </button>
-            </p>
-            
+<div class="wrapper-area">
+    <div class="inner-page-banner-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="breadcrumb-area">
+                        <h1>Seu carrinho</h1>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+
+    <!-- Área do Carrinho de Compra -->
+    <div class="cart-page-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="cart-page-top table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <td class="cart-form-heading"></td>
+                                    <td class="cart-form-heading">Produto</td>
+                                    <td class="cart-form-heading">Preço</td>
+                                    <td class="cart-form-heading">Quantidade</td>
+                                    <td class="cart-form-heading">Total</td>
+                                    <td class="cart-form-heading"></td>
+                                </tr>
+                            </thead>
+                            <tbody id="quantity-holder">
+                                <tr ng-repeat="product in products | orderBy:'name'">
+                                    <td><img ng-src="{{product.photos[0]}}"
+                                        style="width: 100px; height: 150px;"></td>
+                                        <td>{{product.name}}</td>
+                                        <td><p class="card-text">R$ {{product.price}},00</p></td>
+                                        <td><p class="card-text">{{product.quantity}}</p></td>
+                                        <td><p class="card-text">R$</td>
+                                        <td><a href=""
+                                                style="color: #111"><i class="fa fa-times"
+                                                aria-hidden="true"></i></a></td>    
+                                </tr>
+                                    </tbody>
+                                </table>
+                                <div class="update-button">
+                                    <a class="btn-apply-coupon disabled float-right" id="teste"
+                                    href="/home">Continuar Comprando</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+                            <div class="cart-page-bottom-right">
+                                <h3>
+                                    Total: R$
+                                </h3>
+                                <div class="proceed-button">
+                                    <a class="btn-apply-coupon disabled" id="teste" href="/checkout">Finalizar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>

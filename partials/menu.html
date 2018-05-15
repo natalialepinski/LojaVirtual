@@ -1,0 +1,31 @@
+<nav class="navbar navbar-expand-lg main-menu">
+  <a class="navbar-brand title-menu" href="/home">Hi Store</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto u-list">
+      <li class="nav-item list-menu">
+        <a class="nav-link" href="/home">Home</a>
+      </li>
+      <li class="nav-item dropdown list-menu">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Produtos</a>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" href="/search?query=mochila">Mochilas</a>
+          <a class="dropdown-item" href="/search?query=carteira">Carteiras</a>
+          <a class="dropdown-item" href="/products">Todos os produtos</a>
+        </div>
+      </li>
+      <li class="nav-item list-menu">
+        <a class="nav-link" href="/cart">Carrinho</a>
+      </li>
+    </ul>
+    <div ng-controller="searchFormController as sfController">
+      <form class="form-inline my-2 my-lg-0" ng-submit="sfController.submit()">
+        <input class="form-control mr-sm-2" type="search" placeholder="O que procura?" aria-label="Buscar" ng-model="sfController.query">
+        <button class="btn btn-primary my-2 my-sm-0 submit-button" type="submit">Buscar</button>
+      </form>
+    </div>
+  </div>
+</nav>
